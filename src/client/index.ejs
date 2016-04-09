@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="generator" content="narukku" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title><%=title%></title>
+
+    <base href="/">
+    <!-- bower:js -->
+    <!-- endbower -->
+    
+    <!-- bower:css -->
+    <!-- endbower -->    
+    
+    <!-- inject:js -->
+    <!-- endinject -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            "baseURL": "/",
+            "defaultJSExtensions": true,
+            "map":{
+                'app':'client/app',
+            },
+            "paths": {
+                'angular2/*': 'node_modules/angular2/*',
+                'rxjs/*': 'node_modules/rxjs/*'
+            }
+        });
+    
+        System.import('app/boot').then(null, console.error.bind(console));
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  </head>
+
+  <!-- 3. Display the application  -->
+  <body>
+    <app>Loadng..</app>
+  </body>
+
+</html>
