@@ -53,7 +53,9 @@ gulp.task('injectDep', ['buildFrontEnd'], function () {
         ignorePath: '../../public'
     };
 
-    var target = gulp.src(path.resolve('./src/client/**/*.ejs'));
+    var target = gulp.src([
+                path.resolve('./src/client/**/*.ejs')
+    ]);
     var dest = gulp.dest(path.resolve('./built/client/'));
     var angular2_sources = gulp.src([
         'node_modules/angular2/bundles/angular2-polyfills.js',
@@ -83,6 +85,8 @@ gulp.task('watchClient', function() {
     gulp.watch(
         [
             'src/client/**/*.ts',
+            'src/client/**/*.js',
+            'src/client/**/*.css',
             'src/client/**/*.ejs',
             'src/client/**/*.html'
         ],
@@ -135,7 +139,7 @@ gulp.task('nodemon', ['buildBackEnd', 'injectDep','watch'], function(cb) {
 
 gulp.task('browser-sync',['nodemon'],function(){
     browserSync.init({
-        proxy: "http://localhost:3000"
+        proxy: "http://localhost:9090"
     });
 });
 

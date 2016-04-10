@@ -2,6 +2,7 @@ import {Component} from "angular2/core";
 import {RouteConfig, ROUTER_DIRECTIVES} from "angular2/router";
 
 import {DashboardComponent} from "../dashboard/dashboard.component";
+import {LoginComponent} from "../login/login.component";
 
 @Component({
     selector: "app",
@@ -10,7 +11,7 @@ import {DashboardComponent} from "../dashboard/dashboard.component";
             <div id="header" class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-header">
                     <a class="navbar-brand" [routerLink]="['Dashboard']">
-                       Angular 2
+                       Smart Quiz
                     </a>
                 </div>
                 <nav class="collapse navbar-collapse">
@@ -32,13 +33,18 @@ import {DashboardComponent} from "../dashboard/dashboard.component";
 @RouteConfig([
     // {
     //     path: "/",
-    //     redirectTo: ["Dashboard"]
+    //     redirectTo: ["Login"]
     // },
     {
+        path: "/login",
+        name: "Login",
+        component: LoginComponent,
+        useAsDefault: true
+    }, {
         path: "/dashboard",
         name: "Dashboard",
         component: DashboardComponent,
-        useAsDefault: true
+        useAsDefault: false
     }
 ])
 

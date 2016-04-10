@@ -1,0 +1,45 @@
+<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">                    
+	<div class="panel panel-primary" >
+		<div class="panel-heading">
+			<div class="panel-title">Login</div>
+		</div>
+		<div class="panel-body" >
+			<form class="form" [ngFormModel]="loginForm" (ngSubmit)="login()">
+				
+				<div class="form-group input-group"
+					[class.has-error]="loginForm.controls['username'].touched 
+										&& !loginForm.controls['username'].valid">
+					<span class="input-group-addon">
+						<i class="glyphicon glyphicon-user"></i>
+					</span>
+					<input type="text" 
+							class="form-control" 
+							name="username" 
+							placeholder="username" 
+							[ngFormControl]="loginForm.controls['username']"			
+							autofocus>
+				</div>
+				
+				<div class="form-group input-group"
+					[class.has-error]="loginForm.controls['password'].touched 
+										&& !loginForm.controls['password'].valid">
+					<span class="input-group-addon">
+						<i class="glyphicon glyphicon-lock"></i>
+					</span>
+					<input type="password" 
+							class="form-control" 
+							name="password"
+							[ngFormControl]="loginForm.controls['password']"							
+							placeholder="password">
+				</div>
+
+				<div class="form-group">
+					<button type="submit" 
+							class="btn btn-success btn-block"
+							[disabled]="!loginForm.valid">Login</button>
+				</div>
+
+			</form>     
+		</div>
+	</div>
+</div>

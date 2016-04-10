@@ -8,7 +8,7 @@ import {Component} from "angular2/core";
 })
 
 export class DashboardComponent {
-    public name = "Angular 2";
+    public name = "Smart Quiz";
     public message = "";
 
     constructor() {
